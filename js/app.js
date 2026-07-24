@@ -123,17 +123,24 @@ async function fetchSanityProjects() {
             ${project.imageUrl ? `<img src="${project.imageUrl}" alt="${project.title} Preview" class="w-full aspect-video object-cover object-top rounded" />` : `<div class="w-full aspect-video bg-zinc-100 dark:bg-zinc-900 rounded flex items-center justify-center text-xs text-zinc-400">No image</div>`}
           </div>
         </div>
-        <div class="px-1.5 space-y-2 mt-2">
-          <div class="flex flex-col gap-0.5">
-            <h3 class="text-sm font-medium text-zinc-900 dark:text-zinc-100 flex items-center gap-1.5">${project.title || ''} <span class="text-xs select-none">${project.emoji || ''}</span></h3>
-            <span class="text-[13px] text-zinc-500 dark:text-zinc-400">${project.subtitle || ''}</span>
+        <div class="px-1.5 pt-3 pb-1 flex flex-col gap-2.5">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="text-base font-semibold text-zinc-900 dark:text-zinc-100 tracking-tight flex items-center gap-1.5">
+                ${project.title || ''} <span class="text-sm select-none">${project.emoji || ''}</span>
+              </h3>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5 font-medium">${project.subtitle || ''}</p>
+            </div>
+            ${project.websiteUrl ? `
+              <a href="${project.websiteUrl}" target="_blank" rel="noopener" class="group/link shrink-0 inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors mt-1">
+                Visit
+                <svg class="w-3 h-3 transform transition-all duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"></path></svg>
+              </a>
+            ` : ''}
           </div>
-          <p class="text-[13px] text-zinc-500 dark:text-zinc-400 font-light leading-relaxed">
+          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed font-light">
             ${project.description || ''}
           </p>
-          <div class="pt-0.5 pb-1">
-            ${project.websiteUrl ? `<a href="${project.websiteUrl}" target="_blank" rel="noopener" class="group/link inline-flex items-center gap-1 text-[11px] font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">${new URL(project.websiteUrl).hostname.replace(/^www\\./, '')} <svg class="w-3 h-3 transform transition-transform group-hover/link:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>` : ''}
-          </div>
         </div>
       </div>
     `).join('');
