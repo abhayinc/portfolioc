@@ -117,7 +117,7 @@ async function fetchSanityProjects() {
               <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
               <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
             </div>
-            <span class="text-[9px] font-mono text-zinc-400 dark:text-zinc-500">${project.websiteUrl ? new URL(project.websiteUrl).hostname : 'Project'}</span>
+            <span class="text-[9px] font-mono text-zinc-400 dark:text-zinc-500">${project.websiteUrl ? new URL(project.websiteUrl).hostname.replace(/^www\\./, '') : 'Project'}</span>
           </div>
           <div class="bg-zinc-50/80 dark:bg-black/20 p-1">
             ${project.imageUrl ? `<img src="${project.imageUrl}" alt="${project.title} Preview" class="w-full aspect-video object-cover object-top rounded" />` : `<div class="w-full aspect-video bg-zinc-100 dark:bg-zinc-900 rounded flex items-center justify-center text-xs text-zinc-400">No image</div>`}
