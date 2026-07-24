@@ -126,7 +126,7 @@ async function fetchSanityProjects() {
         <div class="px-1.5 space-y-2 mt-2">
           <div class="flex flex-col gap-0.5">
             <h3 class="text-sm font-medium text-zinc-900 dark:text-zinc-100 flex items-center gap-1.5">${project.title || ''} <span class="text-xs select-none">${project.emoji || ''}</span></h3>
-            <span class="text-xs text-zinc-500 dark:text-zinc-400 font-light">${project.subtitle || ''}</span>
+            <span class="text-[13px] text-zinc-500 dark:text-zinc-400 italic" style="font-family: 'Playfair Display', serif;">${project.subtitle || ''}</span>
           </div>
           <p class="text-[13px] text-zinc-500 dark:text-zinc-400 font-light leading-relaxed">
             ${project.description || ''}
