@@ -109,8 +109,8 @@ async function fetchSanityProjects() {
     }
 
     container.innerHTML = projects.map(project => `
-      <div class="space-y-2">
-        <div class="overflow-hidden mb-3 border border-zinc-100 dark:border-zinc-800/80 rounded-lg transition-all duration-300">
+      <div class="space-y-3">
+        <div class="overflow-hidden border border-zinc-100 dark:border-zinc-800/80 rounded-lg transition-all duration-300">
           <div class="bg-zinc-50/60 dark:bg-zinc-900/60 border-b border-zinc-100 dark:border-zinc-800/80 px-3 py-1.5 flex items-center justify-between">
             <div class="flex items-center gap-1.5">
               <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
@@ -123,15 +123,17 @@ async function fetchSanityProjects() {
             ${project.imageUrl ? `<img src="${project.imageUrl}" alt="${project.title} Preview" class="w-full aspect-video object-cover object-top rounded" />` : `<div class="w-full aspect-video bg-zinc-100 dark:bg-zinc-900 rounded flex items-center justify-center text-xs text-zinc-400">No image</div>`}
           </div>
         </div>
-        <div class="flex flex-col gap-1 text-sm sm:text-base">
-          <h3 class="font-medium text-zinc-950 dark:text-zinc-100 flex items-center gap-1.5">${project.title || ''} <span class="text-xs text-zinc-400 select-none">${project.emoji || ''}</span></h3>
-          <span class="text-[10px] sm:text-xs text-zinc-400 dark:text-zinc-500">${project.subtitle || ''}</span>
-        </div>
-        <p class="text-xs text-zinc-500 dark:text-zinc-400 font-light leading-relaxed">
-          ${project.description || ''}
-        </p>
-        <div class="text-[11px] font-mono flex items-center gap-2">
-          ${project.websiteUrl ? `<a href="${project.websiteUrl}" target="_blank" rel="noopener" class="text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors hover:underline">${new URL(project.websiteUrl).hostname} ↗</a>` : ''}
+        <div class="px-1.5 space-y-2">
+          <div class="flex flex-col gap-1 text-sm sm:text-base">
+            <h3 class="font-medium text-zinc-950 dark:text-zinc-100 flex items-center gap-1.5">${project.title || ''} <span class="text-xs text-zinc-400 select-none">${project.emoji || ''}</span></h3>
+            <span class="text-[10px] sm:text-xs text-zinc-400 dark:text-zinc-500">${project.subtitle || ''}</span>
+          </div>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400 font-light leading-relaxed">
+            ${project.description || ''}
+          </p>
+          <div class="text-[11px] font-mono flex items-center gap-2 pt-0.5">
+            ${project.websiteUrl ? `<a href="${project.websiteUrl}" target="_blank" rel="noopener" class="text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors hover:underline">${new URL(project.websiteUrl).hostname} ↗</a>` : ''}
+          </div>
         </div>
       </div>
     `).join('');
