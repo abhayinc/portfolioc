@@ -65,7 +65,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
     rel="stylesheet">
 
   <!-- Tailwind CSS Play CDN -->
@@ -78,6 +78,7 @@
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'monospace'],
+            serif: ['"Lora"', 'serif'],
           }
         }
       }
@@ -162,23 +163,23 @@
       <div class="space-y-2 text-sm sm:text-base">
         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline py-3 sm:py-4.5 border-b border-zinc-100 dark:border-zinc-800 gap-1 sm:gap-4">
           <span class="font-medium text-zinc-900 dark:text-zinc-100">High-Converting Design</span>
-          <span class="text-[10px] sm:text-xs font-mono text-zinc-400 dark:text-zinc-500">Stunning Property Visuals / Seamless Booking Flow</span>
+          <span class="text-[10px] sm:text-xs text-zinc-400 dark:text-zinc-500">Stunning Property Visuals / Seamless Booking Flow</span>
         </div>
         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline py-3 sm:py-4.5 border-b border-zinc-100 dark:border-zinc-800 gap-1 sm:gap-4">
           <span class="font-medium text-zinc-900 dark:text-zinc-100">Mobile-First Layouts</span>
-          <span class="text-[10px] sm:text-xs font-mono text-zinc-400 dark:text-zinc-500">Flawless Smartphone Experience / Touch-Optimized UI</span>
+          <span class="text-[10px] sm:text-xs text-zinc-400 dark:text-zinc-500">Flawless Smartphone Experience / Touch-Optimized UI</span>
         </div>
         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline py-3 sm:py-4.5 border-b border-zinc-100 dark:border-zinc-800 gap-1 sm:gap-4">
           <span class="font-medium text-zinc-900 dark:text-zinc-100">Lightning-Fast Tech</span>
-          <span class="text-[10px] sm:text-xs font-mono text-zinc-400 dark:text-zinc-500">Instant Page Loads / Pure Performance</span>
+          <span class="text-[10px] sm:text-xs text-zinc-400 dark:text-zinc-500">Instant Page Loads / Pure Performance</span>
         </div>
         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline py-3 sm:py-4.5 border-b border-zinc-100 dark:border-zinc-800 gap-1 sm:gap-4">
           <span class="font-medium text-zinc-900 dark:text-zinc-100">Direct Search Traffic</span>
-          <span class="text-[10px] sm:text-xs font-mono text-zinc-400 dark:text-zinc-500">Local Search Dominance / Zero Middleman Fees</span>
+          <span class="text-[10px] sm:text-xs text-zinc-400 dark:text-zinc-500">Local Search Dominance / Zero Middleman Fees</span>
         </div>
         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline py-3 sm:py-4.5 border-b border-zinc-100 dark:border-zinc-800 gap-1 sm:gap-4">
           <span class="font-medium text-zinc-900 dark:text-zinc-100">Custom CMS Backend</span>
-          <span class="text-[10px] sm:text-xs font-mono text-zinc-400 dark:text-zinc-500">Easy Package Updates / Full Content Control</span>
+          <span class="text-[10px] sm:text-xs text-zinc-400 dark:text-zinc-500">Easy Package Updates / Full Content Control</span>
         </div>
       </div>
     </section>
@@ -193,132 +194,10 @@
           <path d="M 6 18 C 16 5, 23 2, 26 8 C 29 15, 13 28, 15 30 C 17 32, 29 15, 35 8 C 41 2, 46 15, 43 22 C 41 26, 33 25, 37 21 C 41 18, 46 15, 49 16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
-      <div class="space-y-8 sm:space-y-12">
-
-        <!-- Project 1 -->
-        <div class="space-y-2">
-          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1 text-sm sm:text-base">
-            <h3 class="font-medium text-zinc-950 dark:text-zinc-100 flex items-center gap-1.5">Humsafar Community <span class="text-xs text-zinc-400 select-none">🏔</span></h3>
-            <span class="text-[10px] sm:text-xs font-mono text-zinc-400 dark:text-zinc-500">Himachal DMC / Delhi</span>
-          </div>
-          <p class="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 font-light leading-relaxed">
-            A Himachal Destination Management Company (DMC) operating out of Delhi, designing custom group itineraries and offbeat travel packages.
-          </p>
-          <div class="text-[11px] font-mono flex items-center gap-2">
-            <a href="https://humsafarcommunity.com" target="_blank" rel="noopener"
-              class="text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors hover:underline">humsafarcommunity.com ↗</a>
-            <span class="text-zinc-200 dark:text-zinc-800">/</span>
-            <button class="preview-toggle text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors focus:outline-none" data-target="preview-humsafar">[view screenshot]</button>
-          </div>
-          <!-- Collapsible Preview -->
-          <div id="preview-humsafar" class="hidden overflow-hidden mt-3 border border-zinc-100 dark:border-zinc-800/80 rounded-lg transition-all duration-300">
-            <div class="bg-zinc-50/60 dark:bg-zinc-900/60 border-b border-zinc-100 dark:border-zinc-800/80 px-3 py-1.5 flex items-center justify-between">
-              <div class="flex items-center gap-1.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
-                <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
-                <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
-              </div>
-              <span class="text-[9px] font-mono text-zinc-400 dark:text-zinc-500">humsafarcommunity.com</span>
-            </div>
-            <div class="bg-zinc-50/20 dark:bg-black/10 p-1">
-              <img src="images/humsafar.png" alt="Humsafar Community Website Preview" class="w-full aspect-video object-cover object-top rounded" />
-            </div>
-          </div>
+      <div id="projects-container" class="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12">
+        <div class="col-span-1 sm:col-span-2 py-10 text-center text-xs font-mono text-zinc-500">
+          Loading projects from Sanity CMS...
         </div>
-
-        <!-- Project 2 -->
-        <div class="space-y-2">
-          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1 text-sm sm:text-base">
-            <h3 class="font-medium text-zinc-950 dark:text-zinc-100 flex items-center gap-1.5">The Snow Village <span class="text-xs text-zinc-400 select-none">❄</span></h3>
-            <span class="text-[10px] sm:text-xs font-mono text-zinc-400 dark:text-zinc-500">Boutique Hotel / Manali</span>
-          </div>
-          <p class="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 font-light leading-relaxed">
-            A boutique hotel retreat based in Manali. Redeveloped the visual identity and integrated a direct booking funnel that cuts OTA commission leaks.
-          </p>
-          <div class="text-[11px] font-mono flex items-center gap-2">
-            <a href="https://thesnowvillage.com" target="_blank" rel="noopener"
-              class="text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors hover:underline">thesnowvillage.com ↗</a>
-            <span class="text-zinc-200 dark:text-zinc-800">/</span>
-            <button class="preview-toggle text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors focus:outline-none" data-target="preview-snowvillage">[view screenshot]</button>
-          </div>
-          <!-- Collapsible Preview -->
-          <div id="preview-snowvillage" class="hidden overflow-hidden mt-3 border border-zinc-100 dark:border-zinc-800/80 rounded-lg transition-all duration-300">
-            <div class="bg-zinc-50/60 dark:bg-zinc-900/60 border-b border-zinc-100 dark:border-zinc-800/80 px-3 py-1.5 flex items-center justify-between">
-              <div class="flex items-center gap-1.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
-                <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
-                <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
-              </div>
-              <span class="text-[9px] font-mono text-zinc-400 dark:text-zinc-500">thesnowvillage.com</span>
-            </div>
-            <div class="bg-zinc-50/20 dark:bg-black/10 p-1">
-              <img src="images/snowvillage.png" alt="The Snow Village Website Preview" class="w-full aspect-video object-cover object-top rounded" />
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="space-y-2">
-          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1 text-sm sm:text-base">
-            <h3 class="font-medium text-zinc-950 dark:text-zinc-100 flex items-center gap-1.5">Nomad Commune <span class="text-xs text-zinc-400 select-none">🗺</span></h3>
-            <span class="text-[10px] sm:text-xs font-mono text-zinc-400 dark:text-zinc-500">Nomad Community</span>
-          </div>
-          <p class="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 font-light leading-relaxed">
-            A community-focused network for digital nomads and frequent travelers, providing specialized logistics services, cowork-stays, and offline gatherings.
-          </p>
-          <div class="text-[11px] font-mono flex items-center gap-2">
-            <a href="https://nomadcommune.in" target="_blank" rel="noopener"
-              class="text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors hover:underline">nomadcommune.in ↗</a>
-            <span class="text-zinc-200 dark:text-zinc-800">/</span>
-            <button class="preview-toggle text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors focus:outline-none" data-target="preview-nomadcommune">[view screenshot]</button>
-          </div>
-          <!-- Collapsible Preview -->
-          <div id="preview-nomadcommune" class="hidden overflow-hidden mt-3 border border-zinc-100 dark:border-zinc-800/80 rounded-lg transition-all duration-300">
-            <div class="bg-zinc-50/60 dark:bg-zinc-900/60 border-b border-zinc-100 dark:border-zinc-800/80 px-3 py-1.5 flex items-center justify-between">
-              <div class="flex items-center gap-1.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
-                <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
-                <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
-              </div>
-              <span class="text-[9px] font-mono text-zinc-400 dark:text-zinc-500">nomadcommune.in</span>
-            </div>
-            <div class="bg-zinc-50/20 dark:bg-black/10 p-1">
-              <img src="images/nomadcommune.png" alt="Nomad Commune Website Preview" class="w-full aspect-video object-cover object-top rounded" />
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="space-y-2">
-          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1 text-sm sm:text-base">
-            <h3 class="font-medium text-zinc-950 dark:text-zinc-100 flex items-center gap-1.5">Travel Objects <span class="text-xs text-zinc-400 select-none">🎒</span></h3>
-            <span class="text-[10px] sm:text-xs font-mono text-zinc-400 dark:text-zinc-500">Travel Gear</span>
-          </div>
-          <p class="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 font-light leading-relaxed">
-            A premium travel essentials brand designing functional gear and packing accessories that make transit and long-term travel seamless.
-          </p>
-          <div class="text-[11px] font-mono flex items-center gap-2">
-            <a href="https://travelobjects.in" target="_blank" rel="noopener"
-              class="text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors hover:underline">travelobjects.in ↗</a>
-            <span class="text-zinc-200 dark:text-zinc-800">/</span>
-            <button class="preview-toggle text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors focus:outline-none" data-target="preview-travelobjects">[view screenshot]</button>
-          </div>
-          <!-- Collapsible Preview -->
-          <div id="preview-travelobjects" class="hidden overflow-hidden mt-3 border border-zinc-100 dark:border-zinc-800/80 rounded-lg transition-all duration-300">
-            <div class="bg-zinc-50/60 dark:bg-zinc-900/60 border-b border-zinc-100 dark:border-zinc-800/80 px-3 py-1.5 flex items-center justify-between">
-              <div class="flex items-center gap-1.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
-                <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
-                <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
-              </div>
-              <span class="text-[9px] font-mono text-zinc-400 dark:text-zinc-500">travelobjects.in</span>
-            </div>
-            <div class="bg-zinc-50/20 dark:bg-black/10 p-1">
-              <img src="images/travelobjects.png" alt="Travel Objects Website Preview" class="w-full aspect-video object-cover object-top rounded" />
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
 
@@ -337,7 +216,7 @@
           Let's design and build a high-performing platform that turns travelers into direct customers.
         </p>
         <div class="pt-2 select-none">
-          <a href="mailto:tourismmarketier@gmail.com" class="group inline-flex items-center gap-2 border-b border-zinc-950 dark:border-white pb-0.5 text-zinc-950 dark:text-white font-medium hover:text-[#f5c75d] hover:border-[#f5c75d] transition-all duration-200 text-sm sm:text-base">
+          <a href="https://wa.me/919174024621?text=Hi%20Abhay%2C%20I%20would%20like%20to%20start%20a%20project%20with%20you." target="_blank" rel="noopener" class="group inline-flex items-center gap-2 border-b border-zinc-950 dark:border-white pb-0.5 text-zinc-950 dark:text-white font-medium hover:text-[#f5c75d] hover:border-[#f5c75d] transition-all duration-200 text-sm sm:text-base">
             Start a project with me
             <span class="inline-block transition-transform duration-200 group-hover:translate-x-0.5">→</span>
           </a>
