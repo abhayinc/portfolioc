@@ -108,42 +108,47 @@ async function fetchSanityProjects() {
       return;
     }
 
-    container.innerHTML = projects.map(project => `
-      <div class="space-y-3">
-        <div class="overflow-hidden border border-zinc-200/60 dark:border-zinc-800/80 rounded-lg shadow-sm shadow-zinc-200/30 dark:shadow-none transition-all duration-300">
-          <div class="bg-zinc-100/60 dark:bg-zinc-900/60 border-b border-zinc-200/60 dark:border-zinc-800/80 px-3 py-1.5 flex items-center justify-between">
+    container.innerHTML = projects.map(project => {
+      const CardTag = project.websiteUrl ? 'a' : 'div';
+      const cardProps = project.websiteUrl ? `href="${project.websiteUrl}" target="_blank" rel="noopener"` : '';
+
+      return `
+      <${CardTag} ${cardProps} class="block space-y-3 group/card cursor-pointer">
+        <div class="overflow-hidden border border-zinc-200/60 dark:border-zinc-800/80 rounded-lg shadow-sm shadow-zinc-200/30 dark:shadow-none transition-all duration-500 group-hover/card:border-zinc-300 dark:group-hover/card:border-zinc-700/80 group-hover/card:shadow-md dark:group-hover/card:shadow-none">
+          <div class="bg-zinc-100/60 dark:bg-zinc-900/60 border-b border-zinc-200/60 dark:border-zinc-800/80 px-3 py-1.5 flex items-center justify-between transition-colors duration-500 group-hover/card:bg-zinc-100 dark:group-hover/card:bg-zinc-800">
             <div class="flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
-              <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
-              <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700 transition-colors group-hover/card:bg-red-400 dark:group-hover/card:bg-zinc-600"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700 transition-colors group-hover/card:bg-amber-400 dark:group-hover/card:bg-zinc-600"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700 transition-colors group-hover/card:bg-green-400 dark:group-hover/card:bg-zinc-600"></span>
             </div>
-            <span class="text-[9px] font-mono text-zinc-400 dark:text-zinc-500">${project.websiteUrl ? new URL(project.websiteUrl).hostname.replace(/^www\\./, '') : 'Project'}</span>
+            <span class="text-[9px] font-mono text-zinc-400 dark:text-zinc-500 transition-colors group-hover/card:text-zinc-500 dark:group-hover/card:text-zinc-400">${project.websiteUrl ? new URL(project.websiteUrl).hostname.replace(/^www\\./, '') : 'Project'}</span>
           </div>
           <div class="bg-zinc-50/80 dark:bg-black/20 p-1">
-            ${project.imageUrl ? `<img src="${project.imageUrl}" alt="${project.title} Preview" class="w-full aspect-video object-cover object-top rounded" />` : `<div class="w-full aspect-video bg-zinc-100 dark:bg-zinc-900 rounded flex items-center justify-center text-xs text-zinc-400">No image</div>`}
+            ${project.imageUrl ? `<img src="${project.imageUrl}" alt="${project.title} Preview" class="w-full aspect-video object-cover object-top rounded transition-transform duration-700 group-hover/card:scale-[1.01]" />` : `<div class="w-full aspect-video bg-zinc-100 dark:bg-zinc-900 rounded flex items-center justify-center text-xs text-zinc-400">No image</div>`}
           </div>
         </div>
         <div class="px-1.5 pt-3 pb-1 flex flex-col gap-2.5">
           <div class="flex items-start justify-between gap-4">
             <div>
-              <h3 class="text-base font-semibold text-zinc-900 dark:text-zinc-100 tracking-tight flex items-center gap-1.5">
+              <h3 class="text-base font-semibold text-zinc-900 dark:text-zinc-100 tracking-tight flex items-center gap-1.5 transition-colors group-hover/card:text-emerald-600 dark:group-hover/card:text-emerald-400">
                 ${project.title || ''} <span class="text-sm select-none">${project.emoji || ''}</span>
               </h3>
               <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5 font-medium">${project.subtitle || ''}</p>
             </div>
             ${project.websiteUrl ? `
-              <a href="${project.websiteUrl}" target="_blank" rel="noopener" class="group/link shrink-0 inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors mt-1">
+              <span class="shrink-0 inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-zinc-400 transition-colors mt-1 group-hover/card:text-emerald-600 dark:group-hover/card:text-emerald-400">
                 Visit
-                <svg class="w-3 h-3 transform transition-all duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"></path></svg>
-              </a>
+                <svg class="w-3 h-3 transform transition-all duration-300 group-hover/card:translate-x-0.5 group-hover/card:-translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"></path></svg>
+              </span>
             ` : ''}
           </div>
           <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed font-light">
             ${project.description || ''}
           </p>
         </div>
-      </div>
-    `).join('');
+      </${CardTag}>
+      `;
+    }).join('');
   } catch (error) {
     console.error('Sanity fetch error:', error);
     container.innerHTML = `<div class="col-span-1 sm:col-span-2 py-10 text-center text-xs font-mono text-red-500 dark:text-red-400 border border-red-200 dark:border-red-900/30 bg-red-50 dark:bg-red-900/10 rounded-lg px-4">
