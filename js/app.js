@@ -123,16 +123,16 @@ async function fetchSanityProjects() {
             ${project.imageUrl ? `<img src="${project.imageUrl}" alt="${project.title} Preview" class="w-full aspect-video object-cover object-top rounded" />` : `<div class="w-full aspect-video bg-zinc-100 dark:bg-zinc-900 rounded flex items-center justify-center text-xs text-zinc-400">No image</div>`}
           </div>
         </div>
-        <div class="px-1 space-y-2.5 mt-1">
-          <div class="flex flex-col gap-0.5">
-            <h3 class="text-base font-semibold text-zinc-900 dark:text-zinc-100 flex items-center gap-1.5 tracking-tight">${project.title || ''} <span class="text-sm select-none">${project.emoji || ''}</span></h3>
-            <span class="text-xs font-medium text-zinc-500 dark:text-zinc-400 tracking-wide">${project.subtitle || ''}</span>
+        <div class="px-1.5 space-y-3 mt-2">
+          <div class="flex flex-col gap-1">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 dark:text-zinc-500">${project.subtitle || ''}</span>
+            <h3 class="text-lg font-extrabold text-zinc-900 dark:text-zinc-50 flex items-center gap-1.5 tracking-tight">${project.title || ''} <span class="text-sm font-normal select-none">${project.emoji || ''}</span></h3>
           </div>
-          <p class="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
+          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
             ${project.description || ''}
           </p>
-          <div class="flex items-center gap-2 pt-1">
-            ${project.websiteUrl ? `<a href="${project.websiteUrl}" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-xs font-semibold text-zinc-900 dark:text-zinc-100 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors border-b border-zinc-900 dark:border-zinc-100 hover:border-emerald-600 dark:hover:border-emerald-400 pb-0.5">${new URL(project.websiteUrl).hostname} <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"></path></svg></a>` : ''}
+          <div class="pt-1 pb-1">
+            ${project.websiteUrl ? `<a href="${project.websiteUrl}" target="_blank" rel="noopener" class="group/link inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-900 dark:text-zinc-100 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">${new URL(project.websiteUrl).hostname.replace(/^www\\./, '')} <svg class="w-3.5 h-3.5 transform transition-transform group-hover/link:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>` : ''}
           </div>
         </div>
       </div>
