@@ -130,13 +130,13 @@ async function fetchSanityProjects() {
         <div class="px-1.5 pt-3 pb-1 flex flex-col gap-2.5">
           <div class="flex items-start justify-between gap-4">
             <div>
-              <h3 class="text-base font-semibold text-zinc-900 dark:text-zinc-100 tracking-tight flex items-center gap-1.5 transition-colors group-hover/card:text-emerald-600 dark:group-hover/card:text-emerald-400">
+              <h3 class="text-base font-semibold text-zinc-900 dark:text-zinc-100 tracking-tight flex items-center gap-1.5 transition-colors group-hover/card:text-[#f5c75d]">
                 ${project.title || ''} <span class="text-sm select-none">${project.emoji || ''}</span>
               </h3>
               <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5 font-medium">${project.subtitle || ''}</p>
             </div>
             ${project.websiteUrl ? `
-              <span class="shrink-0 inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-zinc-400 transition-colors mt-1 group-hover/card:text-emerald-600 dark:group-hover/card:text-emerald-400">
+              <span class="shrink-0 inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-zinc-400 transition-colors mt-1 group-hover/card:text-[#f5c75d]">
                 Visit
                 <svg class="w-3 h-3 transform transition-all duration-300 group-hover/card:translate-x-0.5 group-hover/card:-translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"></path></svg>
               </span>
