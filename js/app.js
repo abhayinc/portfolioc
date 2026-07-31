@@ -130,7 +130,7 @@ async function fetchSanityProjects() {
         <div class="px-1.5 pt-3 pb-1 flex flex-col gap-2.5">
           <div class="flex items-start justify-between gap-4">
             <div>
-              <h3 class="text-base font-semibold text-zinc-900 dark:text-zinc-100 tracking-tight flex items-center gap-1.5 transition-colors group-hover/card:text-[#f5c75d]">
+              <h3 class="text-base font-semibold text-zinc-900 dark:text-zinc-100 tracking-tight flex items-center gap-1.5">
                 ${project.title || ''} <span class="text-sm select-none">${project.emoji || ''}</span>
               </h3>
               <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5 font-medium">${project.subtitle || ''}</p>
