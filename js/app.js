@@ -117,9 +117,9 @@ async function fetchSanityProjects() {
         <div class="overflow-hidden border border-zinc-200/60 dark:border-zinc-800/80 rounded-lg shadow-sm shadow-zinc-200/30 dark:shadow-none transition-all duration-500 group-hover/card:border-zinc-300 dark:group-hover/card:border-zinc-700/80 group-hover/card:shadow-md dark:group-hover/card:shadow-none">
           <div class="bg-zinc-100/60 dark:bg-zinc-900/60 border-b border-zinc-200/60 dark:border-zinc-800/80 px-3 py-1.5 flex items-center justify-between transition-colors duration-500 group-hover/card:bg-zinc-100 dark:group-hover/card:bg-zinc-800">
             <div class="flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700 transition-colors group-hover/card:bg-red-400 dark:group-hover/card:bg-zinc-600"></span>
-              <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700 transition-colors group-hover/card:bg-amber-400 dark:group-hover/card:bg-zinc-600"></span>
-              <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700 transition-colors group-hover/card:bg-green-400 dark:group-hover/card:bg-zinc-600"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700 transition-all duration-150 group-hover/card:bg-[#ff5f56] group-active/card:bg-[#e0443e]"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700 transition-all duration-150 group-hover/card:bg-[#ffbd2e] group-active/card:bg-[#dfa123]"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700 transition-all duration-150 group-hover/card:bg-[#27c93f] group-active/card:bg-[#1aab2e]"></span>
             </div>
             <span class="text-[9px] font-mono text-zinc-400 dark:text-zinc-500 transition-colors group-hover/card:text-zinc-500 dark:group-hover/card:text-zinc-400">${project.websiteUrl ? new URL(project.websiteUrl).hostname.replace(/^www\\./, '') : 'Project'}</span>
           </div>
