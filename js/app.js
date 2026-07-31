@@ -90,7 +90,7 @@ async function fetchSanityProjects() {
   const projectId = 'r9nz7epb';
   const dataset = 'production';
   // We resolve the image reference to an actual URL string
-  const query = encodeURIComponent('*[_type == "project"] | order(order asc) { title, subtitle, description, websiteUrl, emoji, "imageUrl": image.asset->url }');
+  const query = encodeURIComponent('*[_type == "project"] | order(order asc) { title, subtitle, description, websiteUrl, emoji, tags, "imageUrl": image.asset->url }');
   const url = `https://${projectId}.api.sanity.io/v2023-01-01/data/query/${dataset}?query=${query}`;
 
   try {
@@ -142,9 +142,23 @@ async function fetchSanityProjects() {
               </span>
             ` : ''}
           </div>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed font-light">
-            ${project.description || ''}
-          </p>
+          ${project.tags && project.tags.length > 0 ? `
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              ${project.tags.map(tag => `
+                <span class="text-[10px] font-medium tracking-tight bg-zinc-100 dark:bg-zinc-900/60 text-zinc-500 dark:text-zinc-400 px-2 py-0.5 rounded border border-zinc-200/50 dark:border-zinc-800/40">
+                  ${tag}
+                </span>
+              `).join('')}
+            </div>
+          ` : (project.description ? `
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              ${project.description.split(/[,;\n]+/).map(tag => tag.trim()).filter(Boolean).map(tag => `
+                <span class="text-[10px] font-medium tracking-tight bg-zinc-100 dark:bg-zinc-900/60 text-zinc-500 dark:text-zinc-400 px-2 py-0.5 rounded border border-zinc-200/50 dark:border-zinc-800/40">
+                  ${tag}
+                </span>
+              `).join('')}
+            </div>
+          ` : '')}
         </div>
       </${CardTag}>
       `;
