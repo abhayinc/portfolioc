@@ -150,15 +150,7 @@ async function fetchSanityProjects() {
                 </span>
               `).join('')}
             </div>
-          ` : (project.description ? `
-            <div class="flex flex-wrap gap-1.5 pt-1">
-              ${project.description.split(/[,;\n]+/).map(tag => tag.trim()).filter(Boolean).map(tag => `
-                <span class="text-[10px] font-medium tracking-tight bg-zinc-100 dark:bg-zinc-900/60 text-zinc-500 dark:text-zinc-400 px-2 py-0.5 rounded border border-zinc-200/50 dark:border-zinc-800/40">
-                  ${tag}
-                </span>
-              `).join('')}
-            </div>
-          ` : '')}
+          ` : ''}
         </div>
       </${CardTag}>
       `;
