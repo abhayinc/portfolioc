@@ -90,7 +90,7 @@ async function fetchSanityProjects() {
   const projectId = 'r9nz7epb';
   const dataset = 'production';
   // We resolve the image reference to an actual URL string
-  const query = encodeURIComponent('*[_type == "project"] | order(order asc) { title, subtitle, description, websiteUrl, emoji, tags, "imageUrl": image.asset->url }');
+  const query = encodeURIComponent('*[_type == "project"] | order(order asc) { title, subtitle, description, websiteUrl, emoji, tags, speedTech, cmsManagement, resultBooking, "imageUrl": image.asset->url }');
   const url = `https://${projectId}.api.sanity.io/v2023-01-01/data/query/${dataset}?query=${query}`;
 
   try {
@@ -142,8 +142,13 @@ async function fetchSanityProjects() {
               </span>
             ` : ''}
           </div>
+          ${project.description ? `
+            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">
+              ${project.description}
+            </p>
+          ` : ''}
           ${project.tags && project.tags.length > 0 ? `
-            <div class="flex flex-wrap gap-1.5 pt-1">
+            <div class="flex flex-wrap gap-1.5 pt-0.5">
               ${project.tags.map(tag => `
                 <span class="text-[10px] font-medium tracking-tight bg-zinc-100 dark:bg-zinc-900/60 text-zinc-500 dark:text-zinc-400 px-2 py-0.5 rounded border border-zinc-200/50 dark:border-zinc-800/40">
                   ${tag}
@@ -151,11 +156,20 @@ async function fetchSanityProjects() {
               `).join('')}
             </div>
           ` : ''}
-          ${project.description ? `
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed font-light mt-1">
-              ${project.description}
-            </p>
-          ` : ''}
+          <div class="pt-2 mt-0.5 border-t border-zinc-100 dark:border-zinc-800/60 space-y-1.5 font-mono text-[11px] text-zinc-500 dark:text-zinc-400">
+            <div class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>
+              <span>${project.speedTech || 'Instant Load Times • Optimized Tech'}</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-sky-500 shrink-0"></span>
+              <span>${project.cmsManagement || 'Easy Package & Rate Updates • Sanity CMS'}</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#f5c75d] shrink-0"></span>
+              <span>${project.resultBooking || 'Direct Booking Flow • Zero Middleman Fees'}</span>
+            </div>
+          </div>
         </div>
       </${CardTag}>
       `;
