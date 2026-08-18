@@ -90,7 +90,7 @@ async function fetchSanityProjects() {
   const projectId = 'r9nz7epb';
   const dataset = 'production';
   // We resolve the image reference to an actual URL string
-  const query = encodeURIComponent('*[_type == "project"] | order(order asc) { title, subtitle, websiteUrl, emoji, tags, "imageUrl": image.asset->url }');
+  const query = encodeURIComponent('*[_type == "project"] | order(order asc) { title, subtitle, description, websiteUrl, emoji, tags, "imageUrl": image.asset->url }');
   const url = `https://${projectId}.api.sanity.io/v2023-01-01/data/query/${dataset}?query=${query}`;
 
   try {
@@ -150,6 +150,11 @@ async function fetchSanityProjects() {
                 </span>
               `).join('')}
             </div>
+          ` : ''}
+          ${project.description ? `
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed font-light mt-1">
+              ${project.description}
+            </p>
           ` : ''}
         </div>
       </${CardTag}>
