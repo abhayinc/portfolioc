@@ -109,12 +109,12 @@ async function fetchSanityProjects() {
     }
 
     container.innerHTML = projects.map(project => {
-      const CardTag = project.websiteUrl ? 'a' : 'div';
-      const cardProps = project.websiteUrl ? `href="${project.websiteUrl}" target="_blank" rel="noopener"` : '';
+      const linkProps = project.websiteUrl ? `href="${project.websiteUrl}" target="_blank" rel="noopener"` : '';
+      const LinkTag = project.websiteUrl ? 'a' : 'div';
 
       return `
-      <${CardTag} ${cardProps} class="block space-y-3 group/card cursor-pointer">
-        <div class="overflow-hidden border border-stone-200/60 dark:border-zinc-800/80 rounded-lg shadow-sm shadow-stone-200/30 dark:shadow-none transition-all duration-500 group-hover/card:border-stone-300 dark:group-hover/card:border-zinc-700/80 group-hover/card:shadow-md dark:group-hover/card:shadow-none">
+      <div class="block space-y-3 group/card">
+        <${LinkTag} ${linkProps} class="block overflow-hidden border border-stone-200/60 dark:border-zinc-800/80 rounded-lg shadow-sm shadow-stone-200/30 dark:shadow-none transition-all duration-500 group-hover/card:border-stone-300 dark:group-hover/card:border-zinc-700/80 group-hover/card:shadow-md dark:group-hover/card:shadow-none cursor-pointer">
           <div class="bg-stone-100/60 dark:bg-zinc-900/60 border-b border-stone-200/60 dark:border-zinc-800/80 px-3 py-1.5 flex items-center justify-between transition-colors duration-500 group-hover/card:bg-stone-100 dark:group-hover/card:bg-zinc-800">
             <div class="flex items-center gap-1.5">
               <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700 transition-all duration-150 group-hover/card:bg-[#ff5f56] group-active/card:bg-[#e0443e]"></span>
@@ -126,11 +126,11 @@ async function fetchSanityProjects() {
           <div class="bg-stone-50/60 dark:bg-black/20 p-1">
             ${project.imageUrl ? `<img src="${project.imageUrl}" alt="${project.title} Preview" class="w-full aspect-video object-cover object-top rounded transition-transform duration-700 group-hover/card:scale-[1.01]" />` : `<div class="w-full aspect-video bg-stone-100 dark:bg-zinc-900 rounded flex items-center justify-center text-xs text-zinc-400">No image</div>`}
           </div>
-        </div>
+        </${LinkTag}>
         <div class="px-1.5 pt-3 pb-1 flex flex-col gap-2.5">
-          <div class="flex items-start justify-between gap-4">
+          <${LinkTag} ${linkProps} class="flex items-start justify-between gap-4 group/title cursor-pointer text-zinc-900 dark:text-zinc-100 hover:text-[#f5c75d] dark:hover:text-[#f5c75d] transition-colors duration-200">
             <div>
-              <h3 class="text-base font-semibold text-zinc-900 dark:text-zinc-100 tracking-tight flex items-center gap-1.5">
+              <h3 class="text-base font-semibold tracking-tight flex items-center gap-1.5">
                 ${project.title || ''} <span class="text-sm select-none">${project.emoji || ''}</span>
               </h3>
               <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5 font-medium">${project.subtitle || ''}</p>
@@ -141,7 +141,7 @@ async function fetchSanityProjects() {
                 <svg class="w-3 h-3 transform transition-all duration-300 group-hover/card:translate-x-0.5 group-hover/card:-translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"></path></svg>
               </span>
             ` : ''}
-          </div>
+          </${LinkTag}>
           ${project.description ? `
             <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">
               ${project.description}
@@ -157,14 +157,14 @@ async function fetchSanityProjects() {
             </div>
           ` : ''}
           ${(project.speedTech || project.cmsManagement || project.resultBooking) ? `
-            <div class="pt-2 mt-0.5 border-t border-stone-200/60 dark:border-zinc-800/60 space-y-1.5 text-xs text-zinc-500 dark:text-zinc-400">
+            <div class="pt-2 mt-0.5 space-y-1.5 text-xs text-zinc-500 dark:text-zinc-400">
               ${project.speedTech ? `<div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span><span>${project.speedTech}</span></div>` : ''}
               ${project.cmsManagement ? `<div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sky-500 shrink-0"></span><span>${project.cmsManagement}</span></div>` : ''}
               ${project.resultBooking ? `<div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#f5c75d] shrink-0"></span><span>${project.resultBooking}</span></div>` : ''}
             </div>
           ` : ''}
         </div>
-      </${CardTag}>
+      </div>
       `;
     }).join('');
   } catch (error) {
