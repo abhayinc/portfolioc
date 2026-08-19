@@ -114,8 +114,8 @@ async function fetchSanityProjects() {
 
       return `
       <${CardTag} ${cardProps} class="block space-y-3 group/card cursor-pointer">
-        <div class="overflow-hidden border border-zinc-200/60 dark:border-zinc-800/80 rounded-lg shadow-sm shadow-zinc-200/30 dark:shadow-none transition-all duration-500 group-hover/card:border-zinc-300 dark:group-hover/card:border-zinc-700/80 group-hover/card:shadow-md dark:group-hover/card:shadow-none">
-          <div class="bg-zinc-100/60 dark:bg-zinc-900/60 border-b border-zinc-200/60 dark:border-zinc-800/80 px-3 py-1.5 flex items-center justify-between transition-colors duration-500 group-hover/card:bg-zinc-100 dark:group-hover/card:bg-zinc-800">
+        <div class="overflow-hidden border border-stone-200/60 dark:border-zinc-800/80 rounded-lg shadow-sm shadow-stone-200/30 dark:shadow-none transition-all duration-500 group-hover/card:border-stone-300 dark:group-hover/card:border-zinc-700/80 group-hover/card:shadow-md dark:group-hover/card:shadow-none">
+          <div class="bg-stone-100/60 dark:bg-zinc-900/60 border-b border-stone-200/60 dark:border-zinc-800/80 px-3 py-1.5 flex items-center justify-between transition-colors duration-500 group-hover/card:bg-stone-100 dark:group-hover/card:bg-zinc-800">
             <div class="flex items-center gap-1.5">
               <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700 transition-all duration-150 group-hover/card:bg-[#ff5f56] group-active/card:bg-[#e0443e]"></span>
               <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700 transition-all duration-150 group-hover/card:bg-[#ffbd2e] group-active/card:bg-[#dfa123]"></span>
@@ -123,8 +123,8 @@ async function fetchSanityProjects() {
             </div>
             <span class="text-[9px] font-mono text-zinc-400 dark:text-zinc-500 transition-colors group-hover/card:text-zinc-500 dark:group-hover/card:text-zinc-400">${project.websiteUrl ? new URL(project.websiteUrl).hostname.replace(/^www\\./, '') : 'Project'}</span>
           </div>
-          <div class="bg-zinc-50/80 dark:bg-black/20 p-1">
-            ${project.imageUrl ? `<img src="${project.imageUrl}" alt="${project.title} Preview" class="w-full aspect-video object-cover object-top rounded transition-transform duration-700 group-hover/card:scale-[1.01]" />` : `<div class="w-full aspect-video bg-zinc-100 dark:bg-zinc-900 rounded flex items-center justify-center text-xs text-zinc-400">No image</div>`}
+          <div class="bg-stone-50/60 dark:bg-black/20 p-1">
+            ${project.imageUrl ? `<img src="${project.imageUrl}" alt="${project.title} Preview" class="w-full aspect-video object-cover object-top rounded transition-transform duration-700 group-hover/card:scale-[1.01]" />` : `<div class="w-full aspect-video bg-stone-100 dark:bg-zinc-900 rounded flex items-center justify-center text-xs text-zinc-400">No image</div>`}
           </div>
         </div>
         <div class="px-1.5 pt-3 pb-1 flex flex-col gap-2.5">
@@ -150,14 +150,14 @@ async function fetchSanityProjects() {
           ${project.tags && project.tags.length > 0 ? `
             <div class="flex flex-wrap gap-1.5 pt-1">
               ${project.tags.map(tag => `
-                <span class="text-[10px] font-medium bg-zinc-100 dark:bg-zinc-900/80 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded border border-zinc-200/80 dark:border-zinc-800/60">
+                <span class="text-[10px] font-medium bg-stone-100/80 dark:bg-zinc-900/80 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded border border-stone-200/60 dark:border-zinc-800/60">
                   ${tag}
                 </span>
               `).join('')}
             </div>
           ` : ''}
           ${(project.speedTech || project.cmsManagement || project.resultBooking) ? `
-            <div class="pt-2 mt-0.5 border-t border-zinc-100 dark:border-zinc-800/60 space-y-1.5 text-xs text-zinc-500 dark:text-zinc-400">
+            <div class="pt-2 mt-0.5 border-t border-stone-200/60 dark:border-zinc-800/60 space-y-1.5 text-xs text-zinc-500 dark:text-zinc-400">
               ${project.speedTech ? `<div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span><span>${project.speedTech}</span></div>` : ''}
               ${project.cmsManagement ? `<div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sky-500 shrink-0"></span><span>${project.cmsManagement}</span></div>` : ''}
               ${project.resultBooking ? `<div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#f5c75d] shrink-0"></span><span>${project.resultBooking}</span></div>` : ''}
