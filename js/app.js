@@ -150,14 +150,14 @@ async function fetchSanityProjects() {
           ${project.tags && project.tags.length > 0 ? `
             <div class="flex flex-wrap gap-1.5 pt-1">
               ${project.tags.map(tag => `
-                <span class="text-[10px] font-mono tracking-tight bg-zinc-100 dark:bg-zinc-900/80 text-zinc-700 dark:text-zinc-300 px-2 py-0.5 rounded border border-zinc-200/80 dark:border-zinc-800">
+                <span class="text-[10px] font-medium bg-zinc-100 dark:bg-zinc-900/80 text-zinc-600 dark:text-zinc-400 px-2.5 py-0.5 rounded border border-zinc-200/80 dark:border-zinc-800/60">
                   ${tag}
                 </span>
               `).join('')}
             </div>
           ` : ''}
           ${(project.speedTech || project.cmsManagement || project.resultBooking) ? `
-            <div class="pt-2 mt-0.5 border-t border-zinc-100 dark:border-zinc-800/60 space-y-1.5 font-mono text-[11px] text-zinc-500 dark:text-zinc-400">
+            <div class="pt-2 mt-0.5 border-t border-zinc-100 dark:border-zinc-800/60 space-y-1.5 text-xs text-zinc-500 dark:text-zinc-400">
               ${project.speedTech ? `<div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span><span>${project.speedTech}</span></div>` : ''}
               ${project.cmsManagement ? `<div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sky-500 shrink-0"></span><span>${project.cmsManagement}</span></div>` : ''}
               ${project.resultBooking ? `<div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#f5c75d] shrink-0"></span><span>${project.resultBooking}</span></div>` : ''}
